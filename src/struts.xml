@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="action" extends="struts-default">
+        <action name="LoginAction" class="action.LoginAction" method="login">
+            <result name="member">/MemberPage/memberPage.jsp</result>
+            <result name="provider">/ProviderPage/providerPage.jsp</result>
+            <result name="operator">/OperatorPage/operatorPage.jsp</result>
+            <result name="admin">/AdminPage/adminPage.jsp</result>
+            <result name="error">/loginError.jsp</result>
+        </action>
+        <action name="PayAction" class="action.PayAction">
+            <result name="success">/MemberPage/payForFee.jsp</result>
+            <result name="error">/MemberPage/payForFee.jsp</result>
+        </action>
+        <action name="MemberValidatedAction" class="action.MemberValidatedAction">
+            <result name="success">/ProviderPage/serviceRecord.jsp</result>
+            <result name="error">stateError.jsp</result>
+        </action>
+        <action name="ServiceResultAction" class="action.ServiceResultAction">
+            <result name="success">/ProviderPage/serviceResult.jsp</result>
+            <result name="error">/ProviderPage/serviceRecord.jsp</result>
+        </action>
+        <action name="SaveRecordAction" class="action.SaveRecordAction">
+            <result name="success">/ProviderPage/serviceSuccess.jsp</result>
+            <result name="error">/ProviderPage/saveError.jsp</result>
+        </action>
+        <action name="ApplyForProviderIndexAction" class="action.ApplyForProviderIndexAction">
+            <result name="success">/ProviderPage/providerIndex.jsp</result>
+            <result name="error">/ProviderPage/providerPage.jsp</result>
+        </action>
+        <action name="OperateAction" class="action.OperateAction">
+            <result name="addMemberSuccess">/OperatorPage/addMemberSuccess.jsp</result>
+            <result name="deleteMemberSuccess">/OperatorPage/deleteMemberSuccess.jsp</result>
+            <result name="addProviderSuccess">/OperatorPage/addProviderSuccess.jsp</result>
+            <result name="deleteProviderSuccess">/OperatorPage/deleteProviderSuccess.jsp</result>
+            <result name="error">/OperatorPage/operateError.jsp</result>
+        </action>
+        <action name="AdminAction" class="action.AdminAction">
+            <result name="memberReportSuccess">/AdminPage/memberList.jsp</result>
+            <result name="providerReportSuccess">/AdminPage/providerList.jsp</result>
+            <result name="outLineSuccess">/AdminPage/outLine.jsp</result>
+            <result name="updateMemberSuccess">/AdminPage/updateMemberSuccess.jsp</result>
+            <result name="updateProviderSuccess">/AdminPage/updateProviderSuccess.jsp</result>
+            <result name="error">/AdminPage/updateError.jsp</result>
+        </action>
+    </package>
+</struts>

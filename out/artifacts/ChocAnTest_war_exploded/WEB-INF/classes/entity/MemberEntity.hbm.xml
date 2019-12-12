@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.MemberEntity" table="member" schema="chocan">
+        <id name="memberId" column="member_id"/>
+        <property name="memberName" column="member_name"/>
+        <property name="memberAddress" column="member_address"/>
+        <property name="memberCity" column="member_city"/>
+        <property name="memberCountry" column="member_country"/>
+        <property name="memberZip" column="member_zip"/>
+        <property name="memberState" column="member_state"/>
+        <property name="memberFee" column="member_fee"/>
+        <property name="memberPass" column="member_pass"/>
+        <set name="servicerecord">
+            <key column="member_id"/>
+            <one-to-many class="entity.ServicerecordEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>
